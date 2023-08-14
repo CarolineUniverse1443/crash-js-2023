@@ -49,30 +49,3 @@ submitBtn.onclick = function()
 	const sum = computeNumbers(input1, input2, action);
 	printResult(sum);
 };
-// actionBtn.onclick = function()
-// {
-// 	action = this.textContent;
-// 	console.log(action);
-// };
-
-// plusBtn.onclick = function()
-// {
-// 	action = '+';
-// };
-
-// minusBtn.onclick = function()
-// {
-// 	action = '-';
-// };
-
-// multiplyBtn.onclick = function()
-// {
-// 	action = '*';
-// };
-
-// divideBtn.onclick = function()
-// {
-// 	action = '/';
-// };
-
-
