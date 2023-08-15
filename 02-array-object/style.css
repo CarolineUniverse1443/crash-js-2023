@@ -1,0 +1,15 @@
+.list-group-item__title
+{
+	margin-right: 10px;
+
+	&.del
+	{
+		text-decoration: line-through;
+	}
+}
+
+.btns
+{
+	display: flex;
+	gap: 5px;
+}
