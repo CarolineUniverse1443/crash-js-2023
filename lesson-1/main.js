@@ -7,10 +7,10 @@ const minusBtn = document.getElementById('minus');
 const multiplyBtn = document.getElementById('multiply');
 const divideBtn = document.getElementById('divide');
 
-const actionBtns = Object.values(document.getElementsByClassName('_action'));
 
-console.log(actionBtns);
 let action = '+';
+
+init();
 
 function printResult(result)
 {
@@ -36,13 +36,19 @@ function computeNumbers(inp1, inp2, actionSymbol)
 		return num1 / num2;
 }
 
-actionBtns.forEach( function(elem)
+function init()
 {
-	elem.onclick = function()
+	const actionBtns = Object.values(document.getElementsByClassName('_action'));
+
+	actionBtns.forEach( function(elem)
 	{
-		action = this.textContent;
-	};
-});
+		elem.onclick = function()
+		{
+			action = this.textContent;
+		};
+	});
+}
+
 
 submitBtn.onclick = function()
 {
