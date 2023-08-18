@@ -132,6 +132,52 @@ function countWords(sentence)
 {
 	return sentence.split(' ').length;
 }
-
 console.log(countWords("Hello, how are you, dude?"));
 
+function getInitials(string)
+{
+	return string
+		.split(' ')
+		.map( str => str.slice(0, 1))
+		.join('. ') + '.';
+}
+
+
+const fullName = "John Doe";
+const initials = getInitials(fullName);
+console.log(initials);
+
+function generateGoogleString(num)
+{
+	if(num <= 2)
+		return 'Google';
+
+	let string = 'oo';
+	for (let i = 0; i < num - 2; i++)
+	{
+		string += 'o';
+	}
+
+	return `G${string}gle`;
+}
+
+console.log(generateGoogleString(3));
+
+function countVowels(string)
+{
+	return string.length;
+}
+
+const countVowels2 = (str) =>
+{
+	const vowels = ['a', 'e', 'i', 'o', 'u', 'а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
+	let count = 0;
+
+	for (let i = 0; i < str.length; i++)
+	{
+		if (vowels.includes(str[i].toLowerCase()))
+		{
+			count++;
+		}
+	}
+};
