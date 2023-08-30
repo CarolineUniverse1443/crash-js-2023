@@ -4,27 +4,27 @@ const fullBtn = document.getElementById('full');
 const dateBtn = document.getElementById('date');
 const timeBtn = document.getElementById('time');
 
+function bindMode(name)
+{
+	return function()
+	{
+		mode = name;
+		update();
+		console.error("Обнаружен недостаток обнимашек, обнимитесь как можно скорее");
+		console.log(`Button: ${this.textContent}`);
+		console.log(output.textContent);
+	};
+}
+
 update();
 
 setInterval(update, 1000);
 
-fullBtn.onclick = function()
-{
-	mode = 'full';
-	update();
-};
+fullBtn.onclick = bindMode('full');
 
-dateBtn.onclick = function()
-{
-	mode = 'date';
-	update();
-};
+dateBtn.onclick = bindMode('date');
 
-timeBtn.onclick = function()
-{
-	mode = 'time';
-	update();
-};
+timeBtn.onclick = bindMode('time');
 
 function update()
 {
