@@ -126,58 +126,168 @@ function showCar(obj)
 	`;
 }
 
-console.log(showCar(car));
+// console.log(showCar(car));
 
-function countWords(sentence)
+// function countWords(sentence)
+// {
+// 	return sentence.split(' ').length;
+// }
+// console.log(countWords("Hello, how are you, dude?"));
+
+// function getInitials(string)
+// {
+// 	return string
+// 		.split(' ')
+// 		.map( str => str.slice(0, 1))
+// 		.join('. ') + '.';
+// }
+
+
+// const fullName = "John Doe";
+// const initials = getInitials(fullName);
+// console.log(initials);
+
+// function generateGoogleString(num)
+// {
+// 	if(num <= 2)
+// 		return 'Google';
+
+// 	let string = 'oo';
+// 	for (let i = 0; i < num - 2; i++)
+// 	{
+// 		string += 'o';
+// 	}
+
+// 	return `G${string}gle`;
+// }
+
+// console.log(generateGoogleString(3));
+
+// function countVowels(string)
+// {
+// 	return string.length;
+// }
+
+// const countVowels2 = (str) =>
+// {
+// 	const vowels = ['a', 'e', 'i', 'o', 'u', 'а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
+// 	let count = 0;
+
+// 	for (let i = 0; i < str.length; i++)
+// 	{
+// 		if (vowels.includes(str[i].toLowerCase()))
+// 		{
+// 			count++;
+// 		}
+// 	}
+// };
+
+function sumNumbers(...numbers)
 {
-	return sentence.split(' ').length;
+	return numbers.reduce((acc, el) => acc + el, 0);
 }
-console.log(countWords("Hello, how are you, dude?"));
 
-function getInitials(string)
+const result1 = sumNumbers(1, 2, 3, 4, 5);
+console.log(result1);
+
+function findMaxValue(arr)
 {
-	return string
-		.split(' ')
-		.map( str => str.slice(0, 1))
-		.join('. ') + '.';
+	if(!arr.length) return undefined;
+	return Math.max(...arr);
 }
 
+const numbers1 = [];
+const max1 = findMaxValue(numbers1);
 
-const fullName = "John Doe";
-const initials = getInitials(fullName);
-console.log(initials);
+// console.log(findMaxValue([1, 9, 7, 0, -3, 18]));
+console.log(max1);
 
-function generateGoogleString(num)
+function calculateAverage(arr)
 {
-	if(num <= 2)
-		return 'Google';
+	if(!arr.length) return 0;
 
-	let string = 'oo';
-	for (let i = 0; i < num - 2; i++)
+	let sum = arr.reduce((acc, el) => acc + el, 0);
+	return sum / arr.length;
+}
+
+const numbers2 = [];
+console.log(calculateAverage(numbers2));
+
+function isPalindrome(str)
+{
+	const reversed = str.split('').reverse().join('');
+
+	return str === reversed;
+}
+
+console.log(isPalindrome('level'));
+console.log(isPalindrome('radar'));
+console.log(isPalindrome('hello'));
+
+//Напишите функцию removeDuplicates(), которая принимает массив и возвращает новый массив без дубликатов
+
+function removeDuplicates(arr)
+{
+	if(!arr)
+		return arr;
+
+	let uniq = [];
+
+	arr.forEach(function(el)
 	{
-		string += 'o';
+		if(!uniq.includes(el))
+			uniq.push(el);
+	});
+	console.log('uniq:');
+
+	return uniq;
+}
+
+let numbers45 = [1,3,2,2,6,2,1,7,8,3,4,8,0];
+console.log(numbers45);
+console.log(removeDuplicates(numbers45));
+
+function createCounter(value)
+{
+	function inc()
+	{
+		return value++;
 	}
 
-	return `G${string}gle`;
-}
-
-console.log(generateGoogleString(3));
-
-function countVowels(string)
-{
-	return string.length;
-}
-
-const countVowels2 = (str) =>
-{
-	const vowels = ['a', 'e', 'i', 'o', 'u', 'а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
-	let count = 0;
-
-	for (let i = 0; i < str.length; i++)
+	function dec()
 	{
-		if (vowels.includes(str[i].toLowerCase()))
-		{
-			count++;
-		}
+		return value--;
 	}
-};
+
+	function get()
+	{
+		return value;
+	}
+
+	return {
+		inc,
+		dec,
+		get
+	};
+}
+
+//result school
+function createCounter2(value)
+{
+	const inc = () => value++;
+	const dec = () => value--;
+	const get = () => value;
+
+	return { inc, dec, get };
+}
+
+
+console.log('create counter');
+
+const { inc, dec, get } = createCounter(5);
+console.log(get());
+console.log(inc());
+console.log(inc());
+console.log(inc());
+console.log(dec());
+console.log(get());

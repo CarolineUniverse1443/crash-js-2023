@@ -10,9 +10,9 @@ function bindMode(name)
 	{
 		mode = name;
 		update();
-		console.error("Обнаружен недостаток обнимашек, обнимитесь как можно скорее");
-		console.log(`Button: ${this.textContent}`);
-		console.log(output.textContent);
+		// console.error("Обнаружен недостаток обнимашек, обнимитесь как можно скорее");
+		// console.log(`Button: ${this.textContent}`);
+		// console.log(output.textContent);
 	};
 }
 
